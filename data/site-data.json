@@ -1,0 +1,275 @@
+{
+  "business": {
+    "name": "Lotus Unisex Salon Sec.95",
+    "shortName": "Lotus Unisex Salon",
+    "tagline": "Luxury hair, beauty and bridal experiences for Gurgaon.",
+    "address": "Meoka Road, Near AWHO Society, Sector 95, Gurugram, Haryana 122505",
+    "phoneDisplay": "099900 60999",
+    "phoneHref": "+919990060999",
+    "whatsapp": "https://wa.me/919990060999",
+    "mapsEmbed": "https://www.google.com/maps?q=Lotus%20Unisex%20Salon%20Sector%2095%20Gurugram&output=embed",
+    "mapsLink": "https://www.google.com/maps/search/?api=1&query=Lotus%20Unisex%20Salon%20Sec.95%20Meoka%20Road%20Near%20AWHO%20Society%20Sector%2095%20Gurugram%20Haryana%20122505",
+    "rating": 4.6,
+    "reviewCount": 519,
+    "hours": "Open daily till 9 PM",
+    "instagramUrl": "https://www.instagram.com/"
+  },
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About Salon",
+      "href": "/about"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Bridal Services",
+      "href": "/bridal-services"
+    },
+    {
+      "label": "Gallery",
+      "href": "/gallery"
+    },
+    {
+      "label": "Reviews",
+      "href": "/reviews"
+    },
+    {
+      "label": "Book Appointment",
+      "href": "/book-appointment"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "faq": [
+    {
+      "question": "What are your opening hours?",
+      "answer": "We are open daily till 9 PM."
+    },
+    {
+      "question": "Do I need an appointment?",
+      "answer": "Walk-ins are welcome, but appointments are recommended for premium services and bridal bookings."
+    },
+    {
+      "question": "Do you offer bridal services?",
+      "answer": "Yes. We specialize in bridal makeup, bridal hairstyles, skin prep and pre-wedding beauty rituals."
+    },
+    {
+      "question": "Which clients usually visit Lotus?",
+      "answer": "We welcome women, brides, professionals and anyone looking for a relaxing, luxury salon experience in Gurgaon."
+    }
+  ],
+  "instagramPosts": [
+    {
+      "image": "/images/girl%20showing%20salon%20logo.webp",
+      "caption": "Bridal glam with a soft, luminous Lotus finish.",
+      "type": "Bridal"
+    },
+    {
+      "image": "/images/hair%20degin.webp",
+      "caption": "Texture-focused styling with polished detail and hold.",
+      "type": "Hair"
+    },
+    {
+      "image": "/images/reception.webp",
+      "caption": "A warm welcome framed by clean lines and elevated calm.",
+      "type": "Salon"
+    },
+    {
+      "image": "/images/team.webp",
+      "caption": "The people behind every confident transformation.",
+      "type": "Team"
+    }
+  ],
+  "services": [
+    {
+      "name": "Signature Hair Styling",
+      "category": "hair",
+      "price": "Starts at ₹699",
+      "duration": "45 min",
+      "image": "/images/hair%20degin.webp",
+      "description": "Precision styling, polished waves, event blowouts and modern finishing tailored to your face shape."
+    },
+    {
+      "name": "Global Hair Coloring",
+      "category": "hair",
+      "price": "Starts at ₹3,499",
+      "duration": "150 min",
+      "image": "/images/hair%20degin.webp",
+      "description": "Dimensional shades, gloss treatments and rich tone balancing for a luxurious color result."
+    },
+    {
+      "name": "Restorative Hair Spa",
+      "category": "hair",
+      "price": "Starts at ₹1,499",
+      "duration": "60 min",
+      "image": "/images/indoor%20view.webp",
+      "description": "A deep nourishment ritual to calm frizz, restore shine and leave hair touchably soft."
+    },
+    {
+      "name": "Advanced Hair Treatment",
+      "category": "hair",
+      "price": "Starts at ₹4,999",
+      "duration": "180 min",
+      "image": "/images/indoor%20view.webp",
+      "description": "Consultation-led repair and smoothening support for stressed, dry or chemically treated hair."
+    },
+    {
+      "name": "HD Makeup Artistry",
+      "category": "makeup",
+      "price": "Starts at ₹2,999",
+      "duration": "75 min",
+      "image": "/images/girl%20makeup%202.webp",
+      "description": "Camera-ready, skin-like makeup with premium products and long-wear finesse."
+    },
+    {
+      "name": "Microblading",
+      "category": "makeup",
+      "price": "Starts at ₹7,999",
+      "duration": "120 min",
+      "image": "/images/girl%20makeup%202.webp",
+      "description": "Natural-looking brow definition shaped to enhance your facial structure."
+    },
+    {
+      "name": "Permanent Eyelash Extensions",
+      "category": "makeup",
+      "price": "Starts at ₹3,999",
+      "duration": "90 min",
+      "image": "/images/girl%20showing%20salon%20logo.webp",
+      "description": "Classic to volume lash sets that add lift, softness and everyday elegance."
+    },
+    {
+      "name": "Skin Glow Therapy",
+      "category": "skin",
+      "price": "Starts at ₹2,199",
+      "duration": "60 min",
+      "image": "/images/reception.webp",
+      "description": "Targeted skin care rituals designed for brightness, hydration and visible freshness."
+    },
+    {
+      "name": "Luxury Manicure & Nails",
+      "category": "nails",
+      "price": "Starts at ₹1,299",
+      "duration": "50 min",
+      "image": "/images/reception.webp",
+      "description": "Elegant grooming, glossy finishes and clean nail detailing in a premium setting."
+    },
+    {
+      "name": "Bridal Makeup Signature",
+      "category": "bridal",
+      "price": "Starts at ₹14,999",
+      "duration": "240 min",
+      "image": "/images/girl%20makeup%20view.webp",
+      "description": "Wedding-day artistry with skin prep, lashes, draping assistance and a lasting luxe finish."
+    },
+    {
+      "name": "Bridal Hair Styling",
+      "category": "bridal",
+      "price": "Starts at ₹4,999",
+      "duration": "120 min",
+      "image": "/images/girl%20showing%20salon%20logo.webp",
+      "description": "Statement buns, braids and soft volumes designed for ceremonies, portraits and receptions."
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Nikita A.",
+      "rating": 5,
+      "text": "Well trained staff, polite owner and relaxing environment."
+    },
+    {
+      "name": "Shivani P.",
+      "rating": 5,
+      "text": "Very polite people along with soothing ambience."
+    },
+    {
+      "name": "Ritika S.",
+      "rating": 5,
+      "text": "The bridal makeup felt luxurious, lasted beautifully and photographed so well."
+    },
+    {
+      "name": "Priya M.",
+      "rating": 5,
+      "text": "A premium salon experience with calm interiors, thoughtful consultation and polished results."
+    },
+    {
+      "name": "Aastha G.",
+      "rating": 5,
+      "text": "I loved the hair spa and styling suggestions. The team made me feel taken care of from start to finish."
+    },
+    {
+      "name": "Komal R.",
+      "rating": 5,
+      "text": "Clean setup, courteous service and a confidence-boosting final look. I will absolutely return."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "/images/outdoor%20view.webp",
+      "category": "salon",
+      "title": "Luxury exterior"
+    },
+    {
+      "image": "/images/outdoor%20view%202.webp",
+      "category": "salon",
+      "title": "Storefront detail"
+    },
+    {
+      "image": "/images/indoor%20view.webp",
+      "category": "salon",
+      "title": "Interior styling zone"
+    },
+    {
+      "image": "/images/reception.webp",
+      "category": "salon",
+      "title": "Reception and welcome area"
+    },
+    {
+      "image": "/images/team.webp",
+      "category": "salon",
+      "title": "Lotus team"
+    },
+    {
+      "image": "/images/hair%20degin.webp",
+      "category": "hair",
+      "title": "Hair styling detail"
+    },
+    {
+      "image": "/images/girl%20makeup%202.webp",
+      "category": "makeup",
+      "title": "Makeup finish"
+    },
+    {
+      "image": "/images/girl%20makeup%20view.webp",
+      "category": "bridal",
+      "title": "Bridal staircase portrait"
+    },
+    {
+      "image": "/images/girl%20showing%20salon%20logo.webp",
+      "category": "bridal",
+      "title": "Bridal studio portrait"
+    },
+    {
+      "image": "/images/award%20taking.webp",
+      "category": "salon",
+      "title": "Award moment"
+    },
+    {
+      "image": "/images/award%20taking%202.webp",
+      "category": "salon",
+      "title": "Recognition highlight"
+    },
+    {
+      "image": "/images/award%20taking%20from%20famous%20celibrity.webp",
+      "category": "salon",
+      "title": "Industry recognition"
+    }
+  ]
+}

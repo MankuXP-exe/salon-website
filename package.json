@@ -1,0 +1,9 @@
+{
+  "name": "lotus-unisex-salon-sec95",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Luxury salon website for Lotus Unisex Salon Sec.95",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

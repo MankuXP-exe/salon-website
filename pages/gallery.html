@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salon Gallery | Lotus Unisex Salon Sec.95</title>
+    <meta name="description" content="Explore salon interiors, bridal looks, makeup details and team moments from Lotus Unisex Salon Sec.95.">
+    <meta name="keywords" content="salon gallery gurgaon,bridal makeup photos gurgaon,lotus salon sector 95 gallery">
+    <meta name="theme-color" content="#0d0d0d">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+  <body data-page="gallery">
+    <div data-site-header></div>
+    <main>
+      <section class="page-hero">
+        <div class="page-hero__copy reveal">
+          <p class="eyebrow">Gallery</p>
+          <h1>A visual walkthrough of ambience, artistry and luxury detail</h1>
+          <p>See hair styling, makeup, bridal portraits, salon interiors and award moments that define the Lotus experience.</p>
+        </div>
+        <div class="page-hero__image reveal reveal--delay">
+          <img src="/images/outdoor%20view.webp" alt="Lotus salon exterior" fetchpriority="high">
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="gallery-filters reveal" data-gallery-filters>
+          <button class="is-active" type="button" data-filter="all">All</button>
+          <button type="button" data-filter="hair">Hair</button>
+          <button type="button" data-filter="makeup">Makeup</button>
+          <button type="button" data-filter="salon">Salon</button>
+          <button type="button" data-filter="bridal">Bridal</button>
+        </div>
+        <div id="gallery-grid" class="gallery-grid gallery-grid--page"></div>
+      </section>
+
+      <section class="section section--dark split-section">
+        <div class="split-section__media reveal">
+          <img src="/images/award%20taking%202.webp" alt="Lotus salon award highlight" loading="lazy">
+        </div>
+        <div class="split-section__content reveal reveal--delay">
+          <p class="eyebrow">Recognition</p>
+          <h2>Visual proof of premium positioning, inside and beyond the salon</h2>
+          <p>Lotus pairs strong local trust with a polished brand presence, giving clients the confidence that they are booking into a salon that cares deeply about standards.</p>
+          <a class="btn btn--ghost" href="/reviews">Read Client Reviews</a>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer></div>
+    <button type="button" class="sticky-book" data-sticky-cta>Book Appointment</button>
+    <div class="lightbox" data-lightbox hidden>
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close gallery preview">Close</button>
+      <img src="" alt="" class="lightbox__image">
+      <p class="lightbox__caption"></p>
+    </div>
+  </body>
+</html>
