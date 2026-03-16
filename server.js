@@ -105,71 +105,87 @@ function validateAppointment(payload) {
   return required.every((field) => typeof payload[field] === "string" && payload[field].trim());
 }
 
-function createServer() {
+async function handleRequest(req, res) {
   ensureAppointmentsFile();
+  const requestUrl = new URL(req.url, "http://localhost:3000");
+  const { pathname } = requestUrl;
+  const method = req.method || "GET";
 
-  return http.createServer(async (req, res) => {
-    const requestUrl = new URL(req.url, "http://localhost:3000");
-    const { pathname } = requestUrl;
-    const method = req.method || "GET";
+  if (method === "GET" && ["/assets/", "/images/", "/data/"].some((prefix) => pathname.startsWith(prefix))) {
+    const filePath = resolveStaticPath(pathname);
+    if (!filePath) {
+      res.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
+      res.end("Forbidden");
+      return;
+    }
+    await serveFile(res, filePath);
+    return;
+  }
 
-    if (method === "GET" && ["/assets/", "/images/", "/data/"].some((prefix) => pathname.startsWith(prefix))) {
-      const filePath = resolveStaticPath(pathname);
-      if (!filePath) {
-        res.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
-        res.end("Forbidden");
+  if (method === "GET" && ["/robots.txt", "/sitemap.xml"].includes(pathname)) {
+    await serveFile(res, path.join(ROOT, pathname.slice(1)));
+    return;
+  }
+
+  if (method === "GET" && ["/services", "/reviews", "/gallery"].includes(pathname) && isJsonRequest(req, requestUrl)) {
+    const siteData = loadSiteData();
+    sendJson(res, 200, siteData[pathname.slice(1)]);
+    return;
+  }
+
+  if (method === "POST" && pathname === "/book-appointment") {
+    const body = await readBody(req);
+
+    try {
+      const appointment = JSON.parse(body);
+      if (!validateAppointment(appointment)) {
+        sendJson(res, 400, { success: false, message: "Please complete all required fields." });
         return;
       }
-      await serveFile(res, filePath);
-      return;
-    }
 
-    if (method === "GET" && ["/robots.txt", "/sitemap.xml"].includes(pathname)) {
-      await serveFile(res, path.join(ROOT, pathname.slice(1)));
-      return;
-    }
+      const record = {
+        id: `LUS-${Date.now()}`,
+        createdAt: new Date().toISOString(),
+        ...appointment
+      };
 
-    if (method === "GET" && ["/services", "/reviews", "/gallery"].includes(pathname) && isJsonRequest(req, requestUrl)) {
-      const siteData = loadSiteData();
-      sendJson(res, 200, siteData[pathname.slice(1)]);
-      return;
-    }
-
-    if (method === "POST" && pathname === "/book-appointment") {
-      const body = await readBody(req);
+      let persisted = true;
+      let message = "Your appointment request has been received.";
 
       try {
-        const appointment = JSON.parse(body);
-        if (!validateAppointment(appointment)) {
-          sendJson(res, 400, { success: false, message: "Please complete all required fields." });
-          return;
-        }
-
-        const record = {
-          id: `LUS-${Date.now()}`,
-          createdAt: new Date().toISOString(),
-          ...appointment
-        };
-
         await appendAppointment(record);
-        sendJson(res, 201, {
-          success: true,
-          message: "Your appointment request has been received.",
-          appointment: record
-        });
       } catch {
-        sendJson(res, 400, { success: false, message: "Invalid booking payload." });
+        persisted = false;
+        message = "Your appointment details are ready. Please confirm instantly on WhatsApp or by phone.";
       }
-      return;
-    }
 
-    if (method === "GET" && PAGE_ROUTES[pathname]) {
-      await serveFile(res, path.join(ROOT, "pages", PAGE_ROUTES[pathname]));
-      return;
+      sendJson(res, persisted ? 201 : 202, {
+        success: true,
+        persisted,
+        message,
+        appointment: record
+      });
+    } catch {
+      sendJson(res, 400, { success: false, message: "Invalid booking payload." });
     }
+    return;
+  }
 
-    res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-    res.end("Not found");
+  if (method === "GET" && PAGE_ROUTES[pathname]) {
+    await serveFile(res, path.join(ROOT, "pages", PAGE_ROUTES[pathname]));
+    return;
+  }
+
+  res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+  res.end("Not found");
+}
+
+function createServer() {
+  return http.createServer((req, res) => {
+    handleRequest(req, res).catch(() => {
+      res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+      res.end("Server error");
+    });
   });
 }
 
@@ -181,4 +197,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { createServer };
+module.exports = { createServer, handleRequest };

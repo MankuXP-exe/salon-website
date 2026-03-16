@@ -700,7 +700,8 @@ async function initBookingWizard() {
           <p class="eyebrow">Appointment Requested</p>
           <h2>Your premium salon booking is on its way.</h2>
           <p>Reference: <strong>${escapeHtml(result.appointment.id)}</strong></p>
-          <p>We have received your request for ${escapeHtml(payload.service)} on ${escapeHtml(formatDate(payload.date))} at ${escapeHtml(payload.time)}. The salon can follow up on ${escapeHtml(payload.phone)} if needed.</p>
+          <p>${escapeHtml(result.message)}</p>
+          <p>${result.persisted === false ? "Your selected slot is prepared for quick confirmation." : "We have received your request"} for ${escapeHtml(payload.service)} on ${escapeHtml(formatDate(payload.date))} at ${escapeHtml(payload.time)}. The salon can follow up on ${escapeHtml(payload.phone)} if needed.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="/services">Explore More Services</a>
             <a class="btn btn--ghost" href="https://wa.me/919990060999" target="_blank" rel="noreferrer">Message on WhatsApp</a>
